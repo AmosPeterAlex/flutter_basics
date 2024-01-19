@@ -5,14 +5,14 @@ class SliverExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(appBar: AppBar(title: const Text('data'),),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            pinned: true,
-            floating: true,
+            pinned: false,
+            floating: false,
             elevation: 5,
-            title: Text('Slivers..'),
+            title: const Text('Slivers..'),
             bottom: AppBar(
               title: Container(
                 width: double.infinity,
@@ -22,15 +22,15 @@ class SliverExample extends StatelessWidget {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20)),
                       hintText: 'Search',
-                      prefixIcon: Icon(Icons.search)),
+                      prefixIcon: const Icon(Icons.search)),
                 ),
               ),
             ),
           ),
           SliverList(
               delegate: SliverChildListDelegate(List.generate(
-                  6,
-                  (index) => ListTile(
+                  40,
+                  (index) => const ListTile(
                         iconColor: Colors.blue,
                         leading: Icon(Icons.image),
                         title: Text('Image'),
@@ -49,7 +49,7 @@ class SliverExample extends StatelessWidget {
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: SliverExample(),
   ));

@@ -8,7 +8,7 @@ class ClipperExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Clipper'),
+        title: const Text('Clipper'),
       ),
       body: ListView(
         children: [
@@ -18,7 +18,7 @@ class ClipperExample extends StatelessWidget {
                 heightFactor: .8,
                 child: Image.asset('assets/images/IMG_1439.JPG')),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           ClipRRect(
@@ -27,7 +27,7 @@ class ClipperExample extends StatelessWidget {
                 heightFactor: .7,
                 child: Image.asset('assets/images/IMG_1377.JPG')),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           ClipOval(
@@ -36,7 +36,7 @@ class ClipperExample extends StatelessWidget {
                 widthFactor: .5,
                 child: Image.asset('assets/images/IMG_1466.JPG')),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           ClipRRect(
@@ -44,7 +44,7 @@ class ClipperExample extends StatelessWidget {
               child: Align(
                   heightFactor: .9,
                   child: Image.asset('assets/images/IMG_1357.JPG'))),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           ClipPath(
@@ -54,7 +54,7 @@ class ClipperExample extends StatelessWidget {
               color: Colors.blue,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           ClipPath(
@@ -64,7 +64,7 @@ class ClipperExample extends StatelessWidget {
               color: Colors.blue,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           ClipPath(
@@ -74,7 +74,7 @@ class ClipperExample extends StatelessWidget {
               color: Colors.blue,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           ClipPath(
@@ -91,7 +91,7 @@ class ClipperExample extends StatelessWidget {
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: ClipperExample(),
   ));

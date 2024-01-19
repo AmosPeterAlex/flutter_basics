@@ -7,7 +7,7 @@ class OnBoardingExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    PageDecoration pageDecoration = PageDecoration(
+    PageDecoration pageDecoration = const PageDecoration(
         titleTextStyle: TextStyle(
             color: Colors.deepPurple,
             fontSize: 35,
@@ -25,12 +25,12 @@ class OnBoardingExample extends StatelessWidget {
             image: Image.asset('assets/images/my profile pic.jpg')),
         PageViewModel(
             // decoration: pageDecoration,
-            body: 'page 1',
+            body: 'page 2',
             title: 'Page Two',
             image: Image.asset('assets/images/IMG_1466.JPG')),
         PageViewModel(
             decoration: pageDecoration,
-            body: 'page 1',
+            body: 'page 3',
             title: 'Page Three',
             image: Image.asset('assets/images/IMG_1439.JPG')),
         PageViewModel(
@@ -44,12 +44,12 @@ class OnBoardingExample extends StatelessWidget {
             title: 'Page Three',
             image: Image.asset('assets/images/IMG_1439.JPG')),
       ],
-      done: Text('Done'),
-      skip: Text('Skip'),
-      next: Text('Next'),
-      back: Text('back'),
+      done: const Text('Done'),
+      skip: const Text('Skip'),
+      next: const Text('Next'),
+      back: const Text('back'),
       showSkipButton: true,
-      dotsDecorator: DotsDecorator(
+      dotsDecorator: const DotsDecorator(
         color: Colors.grey,
         activeColor: Colors.black,
         // size: Size.fromRadius(5)

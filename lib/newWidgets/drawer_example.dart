@@ -10,17 +10,17 @@ class DrawerExample extends StatelessWidget {
     var col3=[Colors.purple[400],Colors.purple[50],Colors.red,Colors.lightGreen,Colors.indigo[100]];
     return Scaffold(
       appBar: AppBar(
-        title: Text('Drawer Example & Expansion Tile Example'),
+        title: const Text('Drawer Example & Expansion Tile Example'),
       ),
       drawer: Drawer(
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage('assets/images/my profile pic.jpg'),
                         fit: BoxFit.fill)),
-                currentAccountPicture: Center(
+                currentAccountPicture: const Center(
                   child: CircleAvatar(
                     backgroundColor: Colors.deepPurple,
                     child: Icon(Icons.abc),
@@ -29,20 +29,20 @@ class DrawerExample extends StatelessWidget {
                 otherAccountsPictures: [
                   CircleAvatar(
                     backgroundColor: Colors.purple[300],
-                    child: Icon(Icons.account_box),
+                    child: const Icon(Icons.account_box),
                   ),
                   CircleAvatar(
                     backgroundColor: Colors.purple[300],
-                    child: Icon(Icons.add),
+                    child: const Icon(Icons.add),
                   ),
                 ],
-                accountName: Text(
+                accountName: const Text(
                   'Amos P Alex',
                   style: TextStyle(color: Colors.black),
                 ),
-                accountEmail: Text('amos@gmail.com',
+                accountEmail: const Text('amos@gmail.com',
                     style: TextStyle(color: Colors.black))),
-            ListTile(
+            const ListTile(
               title: Text(
                 'Home',
                 style: TextStyle(color: Colors.black),
@@ -50,7 +50,7 @@ class DrawerExample extends StatelessWidget {
               subtitle: Text('Home Page Opens'),
               leading: Icon(Icons.account_box),
             ),
-            ListTile(
+            const ListTile(
               title: Text(
                 'Search',
                 style: TextStyle(color: Colors.black),
@@ -58,7 +58,7 @@ class DrawerExample extends StatelessWidget {
               subtitle: Text('Search Anything'),
               leading: Icon(Icons.search),
             ),
-            ListTile(
+            const ListTile(
               title: Text(
                 'Settings',
                 style: TextStyle(color: Colors.black),
@@ -66,7 +66,7 @@ class DrawerExample extends StatelessWidget {
               subtitle: Text('Settings Page Open'),
               leading: Icon(Icons.settings),
             ),
-            ListTile(
+            const ListTile(
               title: Text(
                 'Print',
                 style: TextStyle(color: Colors.black),
@@ -82,7 +82,7 @@ class DrawerExample extends StatelessWidget {
         child: Column(
           children: [
             ExpansionTile(
-              title: Text('Tile One'),
+              title: const Text('Tile One'),
               children: List.generate(
                   5,
                       (index) => ListTile(
@@ -91,7 +91,7 @@ class DrawerExample extends StatelessWidget {
                     ),
                   )),
             ),ExpansionTile(
-              title: Text('Tile Two'),
+              title: const Text('Tile Two'),
               children: List.generate(
                   5,
                       (index) => ListTile(
@@ -100,7 +100,7 @@ class DrawerExample extends StatelessWidget {
                     ),
                   )),
             ),ExpansionTile(
-              title: Text('Tile Three'),
+              title: const Text('Tile Three'),
               children: List.generate(
                   5,
                       (index) => ListTile(
@@ -117,7 +117,7 @@ class DrawerExample extends StatelessWidget {
 }
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: DrawerExample(),
   ));
