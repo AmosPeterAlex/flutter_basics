@@ -20,7 +20,7 @@ class _BottomNavStfState extends State<BottomNavStf> {
           });
         },
         currentIndex: index,selectedItemColor: Colors.red,
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.search),label: 'Search'),
           BottomNavigationBarItem(icon: Icon(Icons.home),label: 'home'),
           BottomNavigationBarItem(icon: Icon(Icons.person),label: 'Profile')

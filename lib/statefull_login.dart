@@ -16,7 +16,7 @@ class _LoginStatefullState extends State<LoginStatefull> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login Page"),
+        title: const Text("Login Page"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(28.0),
@@ -24,7 +24,7 @@ class _LoginStatefullState extends State<LoginStatefull> {
           key: formkey,
           child: Column(
             children: [
-              Image(
+              const Image(
                 image: AssetImage("assets/images/meta new logo.png"),
                 height: 100,
                 width: 100,
@@ -42,7 +42,7 @@ class _LoginStatefullState extends State<LoginStatefull> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10))),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
@@ -58,13 +58,13 @@ class _LoginStatefullState extends State<LoginStatefull> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10))),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               MaterialButton(
                 height: 50,
                 color: Colors.blueAccent[100],
-                shape: StadiumBorder(),
+                shape: const StadiumBorder(),
                 minWidth: 170,
                 onPressed: () {
                   final valid = formkey.currentState?.validate();
@@ -72,14 +72,14 @@ class _LoginStatefullState extends State<LoginStatefull> {
                     Navigator.push(
                         context, MaterialPageRoute(builder: (context)=>ContentPage()));
                   }else{
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text("Invalid Details"),
                       backgroundColor: Colors.red,
                     ));
 
                   }
                 },
-                child: Text("Login"),
+                child: const Text("Login"),
               )
             ],
           ),

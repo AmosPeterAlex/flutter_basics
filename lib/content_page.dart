@@ -19,7 +19,7 @@ class ContentPage extends StatelessWidget {
           title: Text("My Contacts"),
         ),
         body: ListView(
-          children: [
+          children: const [
             SizedBox(
               height: 30,
             ),

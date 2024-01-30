@@ -20,15 +20,15 @@ class _RegistrationStatefullState extends State<RegistrationStatefull> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent[500],
-        title: Text("Registration Page"),
+        title: const Text("Registration Page"),
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Form(
           key: formkey,
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               TextFormField(
@@ -44,7 +44,7 @@ class _RegistrationStatefullState extends State<RegistrationStatefull> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10))),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
@@ -61,7 +61,7 @@ class _RegistrationStatefullState extends State<RegistrationStatefull> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10))),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
@@ -94,7 +94,7 @@ class _RegistrationStatefullState extends State<RegistrationStatefull> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10))),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               TextFormField(
@@ -125,26 +125,26 @@ class _RegistrationStatefullState extends State<RegistrationStatefull> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10))),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               MaterialButton(
                 height: 40,
                 color: Colors.blueAccent[100],
-                shape: StadiumBorder(),
+                shape: const StadiumBorder(),
                 onPressed: () {
                   final valid = formkey.currentState?.validate();
                   if (valid == true) {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => ContentPage()));
                   } else {
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text("Registration failed"),
                       backgroundColor: Colors.red,
                     ));
                   }
                 },
-                child: Text("Register"),
+                child: const Text("Register"),
               )
             ],
           ),

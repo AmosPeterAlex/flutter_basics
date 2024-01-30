@@ -25,7 +25,7 @@ class LoginSignup extends StatelessWidget {
                 text: TextSpan(
                     style:
                         TextStyle(color: Colors.blueAccent[100], fontSize: 40),
-                    children: [
+                    children: const [
                   TextSpan(
                       text: "Hello ",
                       style: TextStyle(fontStyle: FontStyle.italic)),
@@ -35,12 +35,12 @@ class LoginSignup extends StatelessWidget {
                           fontWeight: FontWeight.bold, color: Colors.black)),
                   TextSpan(text: "User!")
                 ])),
-            Image(
+            const Image(
               image: AssetImage("assets/images/meta new logo.png"),
               width: 130,
               height: 130,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             ElevatedButton(
@@ -48,25 +48,25 @@ class LoginSignup extends StatelessWidget {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => LoginPage()));
               },
-              child: Text("Login Page"),
+              child: const Text("Login Page"),
               style: ElevatedButton.styleFrom(
-                  minimumSize: Size(50, 35),
+                  minimumSize: const Size(50, 35),
                   backgroundColor: Colors.blueAccent[100]),
             ),
-            SizedBox(
+            const SizedBox(
               height: 1,
             ),
             MaterialButton(
               minWidth: 59,
               //Material Button il kurach kudi extra features indu
               //Color oke simple ayi kodukam
-              shape: StadiumBorder(),
+              shape: const StadiumBorder(),
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => SignUpPage()));
               },
               color: Colors.blueAccent[100],
-              child: Text("Sign Up"),
+              child: const Text("Sign Up"),
             )
           ],
         ),

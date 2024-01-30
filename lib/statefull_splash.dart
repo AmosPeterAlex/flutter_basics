@@ -21,6 +21,7 @@ class Splash2 extends StatefulWidget {
 class _Splash2State extends State<Splash2> {
   @override
   void initState() {
+    super.initState();
     Timer(Duration(seconds: 2), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => LoginSignup()));

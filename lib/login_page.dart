@@ -22,10 +22,10 @@ class LoginPage extends StatelessWidget {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => LoginSignup()));
           },
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           color: Colors.black,
         ),
-        title: Text("Login Page"),
+        title: const Text("Login Page"),
       ),
       body: Column(
         children: [
@@ -35,11 +35,11 @@ class LoginPage extends StatelessWidget {
                 fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 5),
+            padding: const EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 5),
             child: TextField(
               controller: user_controller,
               decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.person),
+                  prefixIcon: const Icon(Icons.person),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15)),
                   hintText: "User Name",
@@ -47,13 +47,13 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 5),
+            padding: const EdgeInsets.only(left: 40, right: 40, top: 10, bottom: 5),
             child: TextField(
               obscureText: true,
               obscuringCharacter: "*",
               controller: pass_controller,
               decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.password_outlined),
+                  prefixIcon: const Icon(Icons.password_outlined),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15)),
                   hintText: "Password",
@@ -61,7 +61,7 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           MaterialButton(
-            child: Text("Login Here",
+            child: const Text("Login Here",
                 style:
                     TextStyle(fontWeight: FontWeight.bold, letterSpacing: 1.4)),
             onPressed: () {
@@ -70,7 +70,7 @@ class LoginPage extends StatelessWidget {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ContentPage()));
               } else {
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text("Inavalid UserName or Password"),
                   backgroundColor: Colors.red,
                 ));
@@ -80,11 +80,11 @@ class LoginPage extends StatelessWidget {
               }
             },
             color: Colors.lightBlueAccent,
-            shape: StadiumBorder(),
+            shape: const StadiumBorder(),
             height: 40,
             minWidth: 100,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           TextButton(
@@ -93,7 +93,7 @@ class LoginPage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => SignUpPage()));
               },
               child: RichText(
-                  text: TextSpan(
+                  text: const TextSpan(
                       style: TextStyle(color: Colors.black),
                       children: [
                     TextSpan(text: "Don't Have an account"),

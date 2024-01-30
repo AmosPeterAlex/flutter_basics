@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "674213172466",
+    "project_id": "fir-studyamos",
+    "storage_bucket": "fir-studyamos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674213172466:android:33fc9c650f8864c228ec6b",
+        "android_client_info": {
+          "package_name": "com.amos.flutter_starting_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8tz45w1Lp_Wed8UnytYEZ76qUNHL6K2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

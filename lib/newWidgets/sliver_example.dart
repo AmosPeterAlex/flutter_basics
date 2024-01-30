@@ -5,26 +5,29 @@ class SliverExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: const Text('data'),),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('data'),
+      ),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            pinned: false,
-            floating: false,
+            pinned: true,
+            floating: true,
             elevation: 5,
-            title: const Text('Slivers..'),
+            title: TextField(
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(20)),
+                  hintText: 'Search',
+                  prefixIcon: const Icon(Icons.search)),
+            ),
             bottom: AppBar(
-              title: Container(
-                width: double.infinity,
-                color: Colors.blueGrey[400],
-                child: TextField(
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      hintText: 'Search',
-                      prefixIcon: const Icon(Icons.search)),
-                ),
-              ),
+              title: SizedBox(
+                  width: double.infinity,
+                  // color: Colors.blueGrey[400],
+                  child: Text('Slivers')),
             ),
           ),
           SliverList(
