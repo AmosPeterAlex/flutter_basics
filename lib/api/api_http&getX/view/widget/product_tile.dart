@@ -12,7 +12,7 @@ class ProductTile extends StatelessWidget {
     return Card(
       child: Column(children: [
         Expanded(
-          child: Container(
+          child: SizedBox(
             height: 180,
             width: double.infinity,
             child: CachedNetworkImage(imageUrl: product.image!,fit: BoxFit.cover,),

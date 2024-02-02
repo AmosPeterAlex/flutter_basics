@@ -1,20 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_starting_project/firebase%20example/email%20verification/firebase_functions.dart';
+import 'package:flutter_starting_project/firebase%20example/email%20verification/pg2_firebase.dart';
 import 'package:get/get.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-      options: FirebaseOptions(
-          apiKey: "AIzaSyB8tz45w1Lp_Wed8UnytYEZ76qUNHL6K2Y",
-          appId: "1:674213172466:android:33fc9c650f8864c228ec6b",
-          messagingSenderId: '',
-          projectId: "fir-studyamos"));
-  runApp(MaterialApp(
-    home: RegistrationPage(),
-  ));
-}
 
 class RegistrationPage extends StatefulWidget {
   @override
@@ -22,7 +11,7 @@ class RegistrationPage extends StatefulWidget {
 }
 
 class _RegistrationPageState extends State<RegistrationPage> {
-  final formkey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
   var nameC = TextEditingController();
   var passC = TextEditingController();
 
@@ -34,7 +23,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
       appBar: AppBar(title: Text("Registeration Page")),
       body: Center(
         child: Form(
-          key: formkey,
+          key: formKey,
           child: Column(
             children: [
               TextFormField(
@@ -67,7 +56,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               ),
               TextFormField(
                 validator: (cpass) {
-                  if (cpass!.isEmpty || cpass.length > 6) {
+                  if ((cpass!.isEmpty || cpass.length < 6) && passC == cpass) {
                     return 'password mismatch';
                   } else {
                     return null;
@@ -80,7 +69,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               ),
               ElevatedButton(
                   onPressed: () {
-                    final valid = formkey.currentState!.validate();
+                    final valid = formKey.currentState!.validate();
                     String name = nameC.text.trim();
                     String pass = passC.text.trim();
                     if (valid == true) {
@@ -88,6 +77,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           .regUser(email: name, pwd: pass)
                           .then((res) {
                         if (res == null) {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => LoginPageFirebase()));
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                             content: Text("Success"),
                             backgroundColor: Colors.blueAccent,
@@ -100,11 +91,19 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         }
                       });
                     } else {
-                      ScaffoldMessenger.of(context)
-                          .showSnackBar(SnackBar(content: Text("Failure")));
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text("Failure"),
+                        backgroundColor: Colors.grey,
+                      ));
                     }
                   },
-                  child: Text('Create Account'))
+                  child: Text('Create Account')),
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => LoginPageFirebase()));
+                  },
+                  child: Text('Login'))
             ],
           ),
         ),
