@@ -1,8 +1,6 @@
-// To parse this JSON data, do
-//
-//     final postModel = postModelFromJson(jsonString);
 
 import 'dart:convert';
+
 class PostModel {
   int? userId;
   int? id;
@@ -17,13 +15,9 @@ class PostModel {
   });
 
   PostModel.fromJson(Map<String, dynamic> json) {
-    userId= json["userId"];
-    id=json["id"];
-    title= json["title"];
-    body= json["body"];
+    userId = json["userId"];
+    id = json["id"];
+    title = json["title"];
+    body = json["body"];
   }
-
-
-
-
 }

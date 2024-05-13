@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_starting_project/content_page.dart';
 import 'package:flutter_starting_project/login_signup.dart';
@@ -33,7 +35,7 @@ class _RegistrationStatefullState extends State<RegistrationStatefull> {
               ),
               TextFormField(
                 validator: (name) {
-                  if (name!.isEmpty || name.length< 4) {
+                  if (name!.isEmpty || name.length < 4) {
                     return "Minimum 4 character required";
                   } else {
                     return null;
@@ -76,23 +78,25 @@ class _RegistrationStatefullState extends State<RegistrationStatefull> {
                   }
                 },
                 decoration: InputDecoration(
-                    suffixIcon: IconButton(
-                      icon: Icon(showpass == true
-                          ? Icons.visibility_off_sharp
-                          : Icons.visibility),
-                      onPressed: () {
-                        setState(() {
-                          if (showpass == true) {
-                            showpass = false;
-                          } else {
-                            showpass = true;
-                          }
-                        });
-                      },
-                    ),
-                    hintText: "Password",
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10))),
+                  suffixIcon: IconButton(
+                    icon: Icon(showpass == true
+                        ? Icons.visibility_off_sharp
+                        : Icons.visibility),
+                    onPressed: () {
+                      setState(() {
+                        if (showpass == true) {
+                          showpass = false;
+                        } else {
+                          showpass = true;
+                        }
+                      });
+                    },
+                  ),
+                  hintText: "Password",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 10,
@@ -108,22 +112,27 @@ class _RegistrationStatefullState extends State<RegistrationStatefull> {
                   }
                 },
                 decoration: InputDecoration(
-                    suffixIcon: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            if (showcpass == true) {
-                              showcpass = false;
-                            } else {
-                              showcpass = true;
-                            }
-                          });
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(
+                        () {
+                          if (showcpass == true) {
+                            showcpass = false;
+                          } else {
+                            showcpass = true;
+                          }
                         },
-                        icon: Icon(showcpass == true
-                            ? Icons.visibility_off_sharp
-                            : Icons.visibility)),
-                    hintText: "Retype Password",
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10))),
+                      );
+                    },
+                    icon: Icon(showcpass == true
+                        ? Icons.visibility_off_sharp
+                        : Icons.visibility),
+                  ),
+                  hintText: "Retype Password",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 10,

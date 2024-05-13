@@ -10,12 +10,12 @@ import '../model/post_model.dart';
 class PostController extends GetxController{
 
   RxList postList=RxList(); //makes postList observable
-  RxBool isloading=true.obs;
+  RxBool isLoading=true.obs;
   RxBool isInternetConnected=true.obs;
   RxBool isScrollDown=false.obs;
 
   var url="https://jsonplaceholder.typicode.com/posts";
-  var item_ctrl=ItemScrollController();//to perform scroll actions in positioned scrollable list
+  var itemCtrl=ItemScrollController();//to perform scroll actions in positioned scrollable list
 
   checkInternetConnected()async{
     isInternetConnected.value= await InternetConnectionChecker().hasConnection;
@@ -23,8 +23,8 @@ class PostController extends GetxController{
 
   void getPost() async{
     checkInternetConnected();
-    isloading.value=true;
-    var response=await DioService().fetch_Post(url);
+    isLoading.value=true;
+    var response=await DioService().fetchPost(url);
     if(response.statusCode==200){
       response.data.forEach((element){PostModel.fromJson(element);});
     }

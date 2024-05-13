@@ -3,8 +3,6 @@ import 'package:flutter_starting_project/api/api_http&getx/controller/product_co
 import 'package:flutter_starting_project/api/api_http&getx/view/widget/product_tile.dart';
 import 'package:get/get.dart';
 
-// import 'package:sept_b2_flutter/api/api_http&getx/controller/product_controller.dart';
-// import 'package:sept_b2_flutter/api/api_http&getx/view/home/widget/product_tile.dart';
 void main() {
   runApp(GetMaterialApp(
     home: ApiHome(),

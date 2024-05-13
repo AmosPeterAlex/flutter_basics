@@ -2,9 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class CarouselSliderExample extends StatelessWidget {
-  // const CarouselSliderExample({super.key});
+   CarouselSliderExample({super.key});
 
-  var imgS = [
+  final imgS = [
     "assets/images/my profile pic.jpg",
     "assets/images/IMG_1357.JPG",
     "assets/images/IMG_1377.JPG",
@@ -13,6 +13,7 @@ class CarouselSliderExample extends StatelessWidget {
     "assets/images/IMG_1466.JPG",
     // "assets/images/IMG_1357.JPG",
     // "assets/images/IMG_1357.JPG",
+    // assets/icons/bananas-icon.png
   ];
 
   @override
@@ -21,11 +22,17 @@ class CarouselSliderExample extends StatelessWidget {
       body: Center(
         child: CarouselSlider(
           items: List.generate(
-              6,
-              (index) => Container(
-                    decoration: BoxDecoration(
-                        image: DecorationImage(image: AssetImage(imgS[index]))),
-                  )),
+            6,
+            (index) => Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    imgS[index],
+                  ),
+                ),
+              ),
+            ),
+          ),
           options: CarouselOptions(
               height: 400,
               viewportFraction: .9,

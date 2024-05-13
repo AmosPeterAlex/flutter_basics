@@ -45,38 +45,43 @@ class _FirebaseImageStorageState extends State<FirebaseImageStorage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ElevatedButton.icon(
-                    onPressed: () => upload("camera"),
-                    icon: const Icon(Icons.camera_alt_outlined),
-                    label: const Text('Camera')),
+                  onPressed: () => upload("camera"),
+                  icon: const Icon(Icons.camera_alt_outlined),
+                  label: const Text('Camera'),
+                ),
                 ElevatedButton.icon(
-                    onPressed: () => upload("gallery"),
-                    icon: const Icon(Icons.photo),
-                    label: const Text('Gallery'))
+                  onPressed: () => upload("gallery"),
+                  icon: const Icon(Icons.photo),
+                  label: const Text('Gallery'),
+                )
               ],
             ),
           ),
           Expanded(
-              child: FutureBuilder(
-                  future: loadMedia(),
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.done) {
-                      return ListView.builder(
-                        itemBuilder: (context, index) {
-                          final image = snapshot.data![index];
-                          return Card(
-                            child: ListTile(
-                              leading: Image.network(image['imageUrl']),
-                              trailing: IconButton(
-                                  onPressed: () => deleteMedia(image['path']),
-                                  icon: const Icon(Icons.delete)),
-                            ),
-                          );
-                        },
-                        itemCount: snapshot.data?.length ?? 0,
+            child: FutureBuilder(
+              future: loadMedia(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  return ListView.builder(
+                    itemBuilder: (context, index) {
+                      final image = snapshot.data![index];
+                      return Card(
+                        child: ListTile(
+                          leading: Image.network(image['imageUrl']),
+                          trailing: IconButton(
+                            onPressed: () => deleteMedia(image['path']),
+                            icon: const Icon(Icons.delete),
+                          ),
+                        ),
                       );
-                    }
-                    return CircularProgressIndicator();
-                  }))
+                    },
+                    itemCount: snapshot.data?.length ?? 0,
+                  );
+                }
+                return CircularProgressIndicator();
+              },
+            ),
+          )
         ],
       ),
     );
@@ -109,14 +114,19 @@ class _FirebaseImageStorageState extends State<FirebaseImageStorage> {
     List<Map<String, dynamic>> images = [];
     final ListResult result = await storage.ref().list();
     final List<Reference> allFiles = result.items;
-    await Future.forEach(allFiles, (singleFile) async {
-      final String fileUrl = await singleFile.getDownloadURL();
+    await Future.forEach(
+      allFiles,
+      (singleFile) async {
+        final String fileUrl = await singleFile.getDownloadURL();
 
-      images.add({
-        'imageUrl': fileUrl,
-        'path': singleFile.fullPath,
-      });
-    });
+        images.add(
+          {
+            'imageUrl': fileUrl,
+            'path': singleFile.fullPath,
+          },
+        );
+      },
+    );
     return images;
   }
 
